@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>Index Element</title>
+</head>
+<p>School Admin's Login</p>
+<form action="{% url 'login' %}" method='POST'>{% csrf_token %}
+{{ form.as_p }}
+<input type=submit value="Submit"/>
+</form>
+<a href="{% url 'social:begin' 'facebook' %}?next={% url 'login' %}">Login with Facebook</a>
+</html>
+
+<script>
+
+</script>
