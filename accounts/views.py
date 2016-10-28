@@ -37,3 +37,8 @@ def login(request):
         form = AuthenticationForm()
         context = {'form':form}
         return render(request,'accounts/index.html',context)
+
+@login_required
+def logout(request):
+    django_logout(request)
+    return redirect('index_page')
