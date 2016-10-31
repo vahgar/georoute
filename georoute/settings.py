@@ -29,11 +29,6 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 # Application definition
-AUTHENTICATION_BACKENDS = (
-   'social.backends.facebook.FacebookOAuth2',
-   'social.backends.google.GoogleOAuth2',
-   'django.contrib.auth.backends.ModelBackend',
-)
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -56,7 +51,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
 )
 
 ROOT_URLCONF = 'georoute.urls'
@@ -72,8 +66,6 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-                'social.apps.django_app.context_processors.backends',  # <--
-                'social.apps.django_app.context_processors.login_redirect', # <--
             ],
         },
     },
