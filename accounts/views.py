@@ -25,18 +25,18 @@ def login(request):
             user = authenticate(username=form.cleaned_data['email'], password=form.cleaned_data['password'])
             if user is not None:
                 context = { 'user':user}
-                return render(request,'accounts/login.html',context)
+                return render(request,'login.html',context)
             else:
                 return HttpResponse("Please Check Your Credentials")
         else:
             return HttpResponse("Form is not valid")
     elif(request.user.is_authenticated()):
         context = { 'user':user}
-        return render(request,'accounts/login.html',context)
+        return render(request,'login.html',context)
     else:
         form = AuthenticationForm()
         context = {'form':form}
-        return render(request,'accounts/index.html',context)
+        return render(request,'index.html',context)
 
 @login_required
 def logout(request):

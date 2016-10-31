@@ -5,6 +5,6 @@ urlpatterns = [
     url(r'^index/', index_page, name="index"),
     url(r'^login/',  login, name="login" ),
     url(r'^logout/',  logout, name="logout" ),
-    url('', include('social.apps.django_app.urls', namespace='social')),
+    # url('', include('social.apps.django_app.urls', namespace='social')),
 
 ]

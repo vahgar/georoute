@@ -96,11 +96,14 @@ DATABASES = {
     }
 }
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1662822924029145'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'c42351fdc4212a5ed56786050ca6e65e'
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '970953253745-5v0rq7asi9dtcai5ib51uvssa23vma15.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'QpGaijikPDLRnMjeaWrbHm73'
+# SOCIAL_AUTH_GITHUB_KEY = '01950581667f8737fa09'
+# SOCIAL_AUTH_GITHUB_SECRET = 'ff03a873e167353e39cc83d47b54e1a8c52dda7a'
+#
+# SOCIAL_AUTH_FACEBOOK_KEY = '1662822924029145'
+# SOCIAL_AUTH_FACEBOOK_SECRET = 'c42351fdc4212a5ed56786050ca6e65e'
+#
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '970953253745-5v0rq7asi9dtcai5ib51uvssa23vma15.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'QpGaijikPDLRnMjeaWrbHm73'
 
 
 # Internationalization
@@ -119,5 +122,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 STATIC_URL = '/static/'
