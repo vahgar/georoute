@@ -37,7 +37,6 @@ class NewUserManager(BaseUserManager):
 class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(unique=True)
-    phone_number = PhoneNumberField(null=True,blank=True)
     first_name = models.CharField(max_length=30 )
     last_name = models.CharField(max_length=50, blank=True)
     is_staff = models.BooleanField(default=True)
