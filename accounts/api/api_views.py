@@ -12,3 +12,7 @@ from accounts.models import CustomUser
 class UserCreateAPIView(CreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserCreateSerializer
+
+class UserListAPIView(ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserCreateSerializer
