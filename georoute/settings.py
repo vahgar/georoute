@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'phonenumber_field',
     'accounts',
+    'location',
 )
 
 MIDDLEWARE_CLASSES = (
