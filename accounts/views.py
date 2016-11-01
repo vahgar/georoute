@@ -24,6 +24,7 @@ def login(request):
             name = form.cleaned_data['email']
             user = authenticate(username=form.cleaned_data['email'], password=form.cleaned_data['password'])
             if user is not None:
+                django_login(request,user)
                 context = { 'user':user}
                 return render(request,'login.html',context)
             else:
@@ -31,6 +32,7 @@ def login(request):
         else:
             return HttpResponse("Form is not valid")
     elif(request.user.is_authenticated()):
+        user = request.user
         context = { 'user':user}
         return render(request,'login.html',context)
     else:
@@ -41,4 +43,4 @@ def login(request):
 @login_required
 def logout(request):
     django_logout(request)
-    return redirect('index_page')
+    return redirect('index')

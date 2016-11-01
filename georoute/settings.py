@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',]
 # Application definition
 
 INSTALLED_APPS = (
@@ -39,7 +40,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'phonenumber_field',
     'accounts',
-    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
