@@ -2,10 +2,14 @@ from django.db import models
 from accounts.models import CustomUser
 
 # Create your models here.
+
+class RoadIssues(models.Model):
+    name = models.CharField(max_length=20)
+
 class Location(models.Model):
     latitude = models.DecimalField(max_digits=8, decimal_places=5,blank=True)
     longitude =models.DecimalField(max_digits=8, decimal_places=5, blank=True)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, null=True)
     category = models.CharField(max_length = 20, null=True, blank=True)
     user = models.ForeignKey(CustomUser, null=True,blank=True)
 
