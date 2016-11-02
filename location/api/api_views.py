@@ -7,7 +7,7 @@ from rest_framework.permissions import (
 )
 from location.api.serializers import LocationSerializer, LocationCreateSerializer
 from location.models import Location
-
+from location.api.permissions import IsOwner
 
 class LocationCreateAPIView(CreateAPIView):
     queryset = Location.objects.all()
@@ -30,8 +30,10 @@ class LocationDetailAPIView(RetrieveAPIView):
 
 class LocationUpdateAPIView(UpdateAPIView,RetrieveAPIView):
     queryset = Location.objects.all()
-    serializer_class = LocationSerializer
+    serializer_class = LocationCreateSerializer
+    permission_classes = [IsAuthenticated, IsOwner]
 
 class LocationDeleteAPIView(DestroyAPIView):
     queryset = Location.objects.all()
-    serializer_class = LocationSerializer
+    serializer_class = LocationCreateSerializer
+    permission_classes = [IsAuthenticated, IsOwner]
