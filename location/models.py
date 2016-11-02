@@ -7,7 +7,7 @@ class Location(models.Model):
     longitude =models.DecimalField(max_digits=8, decimal_places=5, blank=True)
     description = models.TextField(blank=True)
     category = models.CharField(max_length = 20, null=True, blank=True)
-    # user = models.ForeignKey(CustomUser)
+    user = models.ForeignKey(CustomUser, null=True,blank=True)
 
 
 

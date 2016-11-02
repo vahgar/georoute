@@ -5,13 +5,20 @@ from rest_framework.permissions import (
     IsAdminUser,
     IsAuthenticatedOrReadOnly,
 )
-from location.api.serializers import LocationSerializer
+from location.api.serializers import LocationSerializer, LocationCreateSerializer
 from location.models import Location
 
 
 class LocationCreateAPIView(CreateAPIView):
     queryset = Location.objects.all()
-    serializer_class = LocationSerializer
+    serializer_class = LocationCreateSerializer
+
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+
 
 class LocationListAPIView(ListAPIView):
     queryset = Location.objects.all()
