@@ -16,3 +16,7 @@ class UserCreateAPIView(CreateAPIView):
 class UserListAPIView(ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserCreateSerializer
+
+class UserDetailAPIView(RetrieveAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserCreateSerializer
