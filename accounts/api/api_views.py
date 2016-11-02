@@ -5,7 +5,7 @@ from rest_framework.permissions import (
     IsAdminUser,
     IsAuthenticatedOrReadOnly,
 )
-from accounts.api.serializers import UserCreateSerializer
+from accounts.api.serializers import UserCreateSerializer, UserUpdateSerializer
 from accounts.models import CustomUser
 
 
@@ -20,3 +20,11 @@ class UserListAPIView(ListAPIView):
 class UserDetailAPIView(RetrieveAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserCreateSerializer
+
+class UserDetailAPIView(RetrieveAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserCreateSerializer
+
+class UserUpdateAPIView(UpdateAPIView,RetrieveAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserUpdateSerializer
