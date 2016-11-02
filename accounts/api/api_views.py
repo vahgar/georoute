@@ -21,10 +21,6 @@ class UserDetailAPIView(RetrieveAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserCreateSerializer
 
-class UserDetailAPIView(RetrieveAPIView):
-    queryset = CustomUser.objects.all()
-    serializer_class = UserCreateSerializer
-
 class UserUpdateAPIView(UpdateAPIView,RetrieveAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserUpdateSerializer
