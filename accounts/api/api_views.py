@@ -28,3 +28,7 @@ class UserDetailAPIView(RetrieveAPIView):
 class UserUpdateAPIView(UpdateAPIView,RetrieveAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserUpdateSerializer
+
+class UserDeleteAPIView(DestroyAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserCreateSerializer
