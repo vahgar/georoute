@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.gis',
     'django.contrib.staticfiles',
     'rest_framework',
     'phonenumber_field',
@@ -81,24 +82,14 @@ WSGI_APPLICATION = 'georoute.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'geo_route',
-        'HOST': 'localhost',
-        'USER': 'root',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'georoute',
+        'USER': 'georoute_tester',
         'PASSWORD': '1470',
-        'PORT': 3306
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
-
-# SOCIAL_AUTH_GITHUB_KEY = '01950581667f8737fa09'
-# SOCIAL_AUTH_GITHUB_SECRET = 'ff03a873e167353e39cc83d47b54e1a8c52dda7a'
-#
-# SOCIAL_AUTH_FACEBOOK_KEY = '1662822924029145'
-# SOCIAL_AUTH_FACEBOOK_SECRET = 'c42351fdc4212a5ed56786050ca6e65e'
-#
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '970953253745-5v0rq7asi9dtcai5ib51uvssa23vma15.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'QpGaijikPDLRnMjeaWrbHm73'
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
