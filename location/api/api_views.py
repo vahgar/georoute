@@ -29,9 +29,9 @@ class LocationListAPIView(ListAPIView):
     def get_queryset(self, *args, **kwargs):
         queryset_list = Location.objects.all()
         query = self.request.GET.get("q")
-        pnt = GEOSGeometry(query, srid=4326)
+
         if query:
-            print("yes")
+            pnt = GEOSGeometry(query, srid=4326)
             queryset_list = Location.objects.filter(point__distance_lte=(pnt, D(km=5)))
         return queryset_list
 
