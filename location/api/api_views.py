@@ -1,3 +1,6 @@
+from django.db.models import Q
+from django.contrib.gis.measure import D
+from django.contrib.gis.geos import GEOSGeometry
 from rest_framework.generics import ListAPIView,RetrieveAPIView,UpdateAPIView,DestroyAPIView,CreateAPIView
 from rest_framework.permissions import (
     AllowAny,
@@ -21,12 +24,21 @@ class LocationCreateAPIView(CreateAPIView):
 
 
 class LocationListAPIView(ListAPIView):
-    queryset = Location.objects.all()
     serializer_class = LocationSerializer
+
+    def get_queryset(self, *args, **kwargs):
+        queryset_list = Location.objects.all()
+        query = self.request.GET.get("q")
+        pnt = GEOSGeometry(query, srid=4326)
+        if query:
+            print("yes")
+            queryset_list = Location.objects.filter(point__distance_lte=(pnt, D(km=5)))
+        return queryset_list
 
 class LocationDetailAPIView(RetrieveAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
+
 
 class LocationUpdateAPIView(UpdateAPIView,RetrieveAPIView):
     queryset = Location.objects.all()
@@ -37,3 +49,7 @@ class LocationDeleteAPIView(DestroyAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationCreateSerializer
     permission_classes = [IsAuthenticated, IsOwner]
+
+
+# class SearchLocationListAPIView(ListAPIView):
+#     serializer_class = LocationSerializer
