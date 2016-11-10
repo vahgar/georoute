@@ -25,7 +25,7 @@ class LocationCreateAPIView(CreateAPIView):
 
 class LocationListAPIView(ListAPIView):
     serializer_class = LocationSerializer
-
+    permission_classes = [IsAuthenticated]
     def get_queryset(self, *args, **kwargs):
         queryset_list = Location.objects.all()
         query = self.request.GET.get("q")
@@ -38,6 +38,7 @@ class LocationListAPIView(ListAPIView):
 class LocationDetailAPIView(RetrieveAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class LocationUpdateAPIView(UpdateAPIView,RetrieveAPIView):
@@ -53,3 +54,8 @@ class LocationDeleteAPIView(DestroyAPIView):
 
 # class SearchLocationListAPIView(ListAPIView):
 #     serializer_class = LocationSerializer
+
+#
+# ''' eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhZ2hhdkBnbWFpbC5jb20iLCJleHAiOjE0Nzg4MDAwMTAsInVzZXJfaWQiOjEsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSJ9.VdUaYoCPcyn0_REk6GqTug0UFtbiXwoi4PHVJ0SOJlE '''
+#
+# curl -H "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhZ2hhdkBnbWFpbC5jb20iLCJleHAiOjE0Nzg4MDAwMTAsInVzZXJfaWQiOjEsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSJ9.VdUaYoCPcyn0_REk6GqTug0UFtbiXwoi4PHVJ0SOJlE" http://localhost:8000/location/create

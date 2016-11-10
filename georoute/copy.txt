@@ -1,0 +1,2 @@
+curl -X GET -H "Content-Type: application/json" -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0Nzg4MDIxNzksImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSJ9.4J3UyDxT3kRXSs5CqacRlNqwSrH859ewfHC2r5D7AQE"}' http://localhost:8000/location/api_list/
+curl -H "Authorization JWT :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0Nzg4MDMzMjUsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSJ9.Vp3jafI5SAt4oRUAHWhEC1dCZLkYwp7HUfO1KodTHRE >"  http://localhost:8000/location/api_list/
