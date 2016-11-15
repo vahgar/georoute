@@ -1,2 +1,6 @@
 curl -X GET -H "Content-Type: application/json" -d '{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0Nzg4MDIxNzksImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSJ9.4J3UyDxT3kRXSs5CqacRlNqwSrH859ewfHC2r5D7AQE"}' http://localhost:8000/location/api_list/
-curl -H "Authorization JWT :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0Nzg4MDMzMjUsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSJ9.Vp3jafI5SAt4oRUAHWhEC1dCZLkYwp7HUfO1KodTHRE >"  http://localhost:8000/location/api_list/
+curl --header "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhZ2hhdkBnbWFpbC5jb20iLCJ1c2VyX2lkIjoxLCJleHAiOjE0NzkyMzI1NDYsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSJ9.A3FFZdFxkVmK-Dfyp_a_h_konGdlKWqM4p_bmrpjkh4>"  http://localhost:8000/location/api_list/
+$ curl -X POST -H "Content-Type: application/json" -d '{"token": "" }' http://localhost:8000/location/api_list/
+
+This worked on 15/11/16
+curl -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0NzkyMzM3NDksInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJfaWQiOjEsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSJ9.m4IcgkUt37G3D_u9wFf70bSaUdV4j0ffSwBVK7l6twQ" http://localhost:8000/location/api_list/

@@ -25,7 +25,6 @@ def login(request):
             user = authenticate(username=form.cleaned_data['email'], password=form.cleaned_data['password'])
             if user is not None:
                 django_login(request,user)
-                request.session.set_expiry(30)
                 context = { 'user':user}
                 return render(request,'login.html',context)
             else:
