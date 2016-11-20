@@ -15,7 +15,7 @@ from location.api.permissions import IsOwner
 class LocationCreateAPIView(CreateAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationCreateSerializer
-
+    permission_classes = [AllowAny]
     # permission_classes = [IsAuthenticate]
 
     # def perform_create(self, serializer):
@@ -25,6 +25,7 @@ class LocationCreateAPIView(CreateAPIView):
 
 class LocationListAPIView(ListAPIView):
     serializer_class = LocationSerializer
+    permission_classes = [AllowAny]
     # permission_classes = [IsAuthenticated]
     def get_queryset(self, *args, **kwargs):
         queryset_list = Location.objects.all()
@@ -39,17 +40,19 @@ class LocationDetailAPIView(RetrieveAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
     # permission_classes = [IsAuthenticated]
-
+    permission_classes = [AllowAny]
 
 class LocationUpdateAPIView(UpdateAPIView,RetrieveAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationCreateSerializer
     # permission_classes = [IsAuthenticated, IsOwner]
+    permission_classes = [AllowAny]
 
 class LocationDeleteAPIView(DestroyAPIView):
     queryset = Location.objects.all()
     serializer_class = LocationCreateSerializer
     # permission_classes = [IsAuthenticated, IsOwner]
+    permission_classes = [AllowAny]
 
 
 # class SearchLocationListAPIView(ListAPIView):
