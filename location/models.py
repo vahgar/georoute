@@ -7,7 +7,7 @@ class RoadIssues(models.Model):
     name = models.CharField(max_length=20)
 
 class Location(models.Model):
-    point = models.PointField(default='POINT(77.1025 28.7041)', srid=4326)
+    point = models.PointField(srid=4326)
     description = models.TextField(blank=True, null=True)
     category = models.CharField(max_length = 20, null=True, blank=True)
     user = models.ForeignKey(CustomUser, null=True,blank=True)
