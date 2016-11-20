@@ -9,8 +9,17 @@
 </body>
 <script>
 $.ajax({
-  url: "/test",
-  headers: {"A": "test-value"}
+
+  url: "http://127.0.0.1:8000/location/api_list/",
+  type: 'GET',
+  dataType: 'jsonp',
+  headers: {
+          Authorization: "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0Nzk1NDExMjgsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSJ9.f8CeJ_11_2CCK9n4agFTt05xnG6HCP7jefbUOhMDhwk"
+  },
+  sucess: function(data) {
+    console.log(data);
+  }
+
 });
 
 </script>
