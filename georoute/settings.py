@@ -14,7 +14,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+from datetime import datetime
+import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = (
     'phonenumber_field',
     'accounts',
     'location',
+    'djcelery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,6 +80,18 @@ REST_FRAMEWORK = {
 # }
 
 ''' REST FRAMEWORK END'''
+
+''' CLEREY & REDIS '''
+
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+''' CELERY & REDIS END '''
+
 
 
 
@@ -117,6 +131,9 @@ DATABASES = {
     }
 }
 
+JWT_AUTH = {
+'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=86400)
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 

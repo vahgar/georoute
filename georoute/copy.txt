@@ -5,7 +5,7 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"token": "" }' http://lo
 This worked on 15/11/16
 curl -H "Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0NzkyMzM3NDksInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJfaWQiOjEsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSJ9.m4IcgkUt37G3D_u9wFf70bSaUdV4j0ffSwBVK7l6twQ" http://localhost:8000/location/api_list/
 
-curl -H "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODAxMDYzMzEsInVzZXJuYW1lIjoicmFnaGF2QGdtYWlsLmNvbSIsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSIsInVzZXJfaWQiOjF9.n7Fwot_hkpC9u2JtqCHGIaRr5vEKGn9TA_vTn3tPclc" http://127.0.0.1:8000/location/api_list/
+curl -H "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhZ2hhdkBnbWFpbC5jb20iLCJ1c2VyX2lkIjoxLCJleHAiOjE0ODAyMzE3NjgsImVtYWlsIjoicmFnaGF2QGdtYWlsLmNvbSJ9.8sWPtJpY0Y8tiDMUmcrQCnbUYBdtQqgd8Wwxm3I0lCI" http://127.0.0.1:8000/location/api_list/
 
 
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxQGdtYWlsLmNvbSIsImV4cCI6MTQ3OTMwNjc3MiwidXNlcl9pZCI6MywiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20ifQ.qVA77F_i3K5sxgL485fFSWEExkbL0q3mVTOB79vh2Vg
