@@ -46,7 +46,6 @@ INSTALLED_APPS = (
     'phonenumber_field',
     'accounts',
     'location',
-    'djcelery',
 )
 
 MIDDLEWARE_CLASSES = (
