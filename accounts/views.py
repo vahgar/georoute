@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.contrib.auth import login as django_login, authenticate, logout as django_logout
 from .forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from location.tasks import delete_loc
 
 
 def index_page(request):
@@ -15,6 +16,7 @@ def index_page(request):
         print("No")
         form = AuthenticationForm()
         context = {'form':form}
+        delete_loc.delay()
         return render(request,'index.html',context)
 
 def login(request):
